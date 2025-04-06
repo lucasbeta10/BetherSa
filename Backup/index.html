@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bether</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="logo-contenedor-horizontal">
+            <img src="Imagenes/Logos/Empresa/Bether.png" alt="logo">
+            <div class="logo-textos">
+                <span class="logo-nombre">Bether</span>
+                <span class="logo-slogan">Más Energía Positiva
+                </span>
+            </div>
+        </div>
+<!-- Botón hamburguesa -->
+
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+    <!-- telefono -->
+    <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="productos.html" class="btn-ver-productos">Productos</a>
+        <div class="categorias-header">Categorías
+          <div class="menu-categorias">
+            <div class="titulo-menu">Selecciona Una Categoría</div>
+            <div class="categorias-contenedor">
+              <div class="categoria-column">
+                <ul class="lista-categorias">
+                  <li>Amortiguadores</li>
+                  <li>Bombas Hidráulicas</li>
+                  <li>Cajas de Dirección</li>
+                  <li>Cazoletas</li>
+                  <li>Discos y Campanas de Freno</li>
+                </ul>
+              </div>
+              <div class="categoria-column">
+                <ul class="lista-categorias">
+                  <li>Embragues</li>
+                  <li>Mazas y Rodamientos</li>
+                  <li>Pastillas de Freno</li>
+                  <li>Resortes a Gas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+    <a href="#contacto" class="btn-contacto">Contacto</a>
+    </nav>
+    
+    
+<!-- Barra Buscadadora -->
+
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar productos..." />
+    <button class="search-btn" aria-label="Buscar">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+        <circle cx="11" cy="11" r="8" stroke="white" stroke-width="2"/>
+        <line x1="16.65" y1="16.65" x2="22" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    
+    
+  </div>
+<!-- Carrito -->
+    <div class="cart-container">
+      <div class="cart-button" onclick="toggleCart()">🛒<span id="cart-count">0</span></div>
+      <div class="cart-dropdown" id="cart-dropdown">
+        <h3>Carrito de compras</h3>
+        <ul id="cart-items">
+          <li>No hay productos aún.</li>
+        </ul>
+        <button class="checkout-btn">Finalizar compra</button>
+      </div>
+    </div>
+  
+    </header>
+  
+    <!-- Carrusel de imagen principal -->
+    <div class="galeria-container">
+        <div class="carousel-btn left">&#10094;</div>
+        <img id="imagen-principal" src="Imagenes/Principales/repuestos de autos 1920 x 810 pixeles.png" alt="Imagen Carrusel">
+        <div class="carousel-btn right">&#10095;</div>
+    </div>
+
+    <!-- Carrusel de logos de marcas -->
+    <div class="categories-container">
+        <div class="categories">
+            <!-- Tanda original -->
+            <img src="Imagenes/Logos/Audi.png" alt="Audi">
+            <img src="Imagenes/Logos/BMW.png" alt="BMW">
+            <img src="Imagenes/Logos/Chevrolet.png" alt="Chevrolet">
+            <img src="Imagenes/Logos/Fiat.png" alt="Fiat">
+            <img src="Imagenes/Logos/FORD.png" alt="Ford">
+            <img src="Imagenes/Logos/Honda.svg" alt="Honda">
+            <img src="Imagenes/Logos/JEEP.png" alt="Jeep">
+            <img src="Imagenes/Logos/Mercedes.png" alt="Mercedes">
+            <img src="Imagenes/Logos/Nissan.svg" alt="Nissan">
+            <img src="Imagenes/Logos/Peugeot.png" alt="Peugeot">
+            <img src="Imagenes/Logos/Toyota.png" alt="Toyota">
+            <img src="Imagenes/Logos/VW.png" alt="Volkswagen">
+            <img src="Imagenes/Logos/mazda.png" alt="Mazda">
+            <img src="Imagenes/Logos/Mitsubishi.svg" alt="Mitsubishi">
+
+            <!-- Tanda duplicada -->
+            <img src="Imagenes/Logos/Audi.png" alt="Audi">
+            <img src="Imagenes/Logos/BMW.png" alt="BMW">
+            <img src="Imagenes/Logos/Chevrolet.png" alt="Chevrolet">
+            <img src="Imagenes/Logos/Fiat.png" alt="Fiat">
+            <img src="Imagenes/Logos/FORD.png" alt="Ford">
+            <img src="Imagenes/Logos/Honda.svg" alt="Honda">
+            <img src="Imagenes/Logos/JEEP.png" alt="Jeep">
+            <img src="Imagenes/Logos/Mercedes.png" alt="Mercedes">
+            <img src="Imagenes/Logos/Nissan.svg" alt="Nissan">
+            <img src="Imagenes/Logos/Peugeot.png" alt="Peugeot">
+            <img src="Imagenes/Logos/Toyota.png" alt="Toyota">
+            <img src="Imagenes/Logos/VW.png" alt="Volkswagen">
+            <img src="Imagenes/Logos/mazda.png" alt="Mazda">
+            <img src="Imagenes/Logos/Mitsubishi.svg" alt="Mitsubishi">
+        </div>
+    </div>
+    
+
+    <!-- Menú de navegación secundaria -->
+    <!-- Características -->
+    <section class="features">
+        <div class="feature"><img src="Imagenes/Productos/Amor.png" alt="Feature 1"><p>Amortiguadores</p></div>
+        <div class="feature"><img src="Imagenes/Productos/Caja.png" alt="Feature 2"><p>Cajas de Dirección</p></div>
+        <div class="feature"><img src="Imagenes/Productos/Junta.png" alt="Feature 3"><p>Juntas Homocinéticas</p></div>
+        <div class="feature"><img src="Imagenes/Productos/Disco.png" alt="Feature 4"><p>Discos y campanas</p></div>
+        <div class="feature"><img src="Imagenes/Productos/Parrilla.png" alt="Feature 5"><p>Parrillas</p></div>
+        <div class="feature"><img src="Imagenes/Productos/Roda.png" alt="Feature 6"><p>Mazas y Rodamientos</p></div>
+        <div class="feature"><img src="Imagenes/Productos/Cazo.png" alt="Feature 7"><p>Cazoletas</p></div>
+        <div class="feature"><img src="Imagenes/Productos/Mas.png" alt="Feature 8"><p>Más</p></div>
+    </section>
+    <section id="ubicacion" class="ubicacion-contenedor">
+        <div class="info-direccion">
+          <h2>¿Dónde estamos?</h2>
+          <p>Av. Santa Fe 1234, Buenos Aires, Argentina</p>
+          <p>Lunes a Viernes: 9:00 - 18:00</p>
+          <p>Sábados: 10:00 - 14:00</p>
+        </div>
+      
+        <div class="mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.60046965674!2d-68.8384214!3d-32.9087301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0969702e5693%3A0x4e4c7154f11ce46e!2sMinuzzi%20428%2C%20M5521%20Godoy%20Cruz%2C%20Mendoza!5e0!3m2!1ses-419!2sar!4v1743776535277!5m2!1ses-419!2sar"
+           width="500" 
+           height="400" 
+           style="border:0;" 
+           allowfullscreen="" 
+           loading="lazy" 
+           referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        </div>
+      </section>
+    
+    <!-- Formulario de contacto -->
+    <section class="contacto" id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Querés que te contactemos? Dejanos tus datos 👇</p>
+      
+        <form action="#" method="POST" class="formulario-contacto">
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+          <input type="email" name="email" placeholder="Tu correo electrónico" required>
+          <input type="tel" name="telefono" placeholder="Tu número de teléfono">
+          <textarea name="mensaje" rows="4" placeholder="Escribí tu consulta..." required></textarea>
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </section>
+      
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const arrow = document.querySelector(".arrow");
+            if (arrow) {
+                arrow.addEventListener("click", function () {
+                    window.scrollTo({
+                        top: window.innerHeight,
+                        behavior: "smooth"
+                    });
+                });
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imagen = document.getElementById("imagen-principal");
+            const flechaIzquierda = document.querySelector(".carousel-btn.left");
+            const flechaDerecha = document.querySelector(".carousel-btn.right");
+
+            const imagenes = [
+                "Imagenes/Principales/repuestos de autos 1920 x 810 pixeles.png",
+                "Imagenes/Autos/auto1.jpg",
+                "Imagenes/Autos/auto2.png"
+            ];
+
+            let indice = 0;
+
+            flechaIzquierda.addEventListener("click", function () {
+                indice = (indice - 1 + imagenes.length) % imagenes.length;
+                imagen.src = imagenes[indice];
+            });
+
+            flechaDerecha.addEventListener("click", function () {
+                indice = (indice + 1) % imagenes.length;
+                imagen.src = imagenes[indice];
+            });
+        });
+    </script>
+    <a href="https://wa.me/542261410186?text=Hola!%20Quisiera%20más%20información" class="whatsapp-float" target="_blank" title="¡Hablá con nosotros por WhatsApp!">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="white">
+      <path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.8L.4 31.6l8-2.1c2.3 1.3 5 2 7.8 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.4c-2.3 0-4.5-.6-6.5-1.7l-.5-.3-4.8 1.2 1.3-4.7-.3-.6c-1.2-2-1.9-4.2-1.9-6.5 0-7 5.7-12.6 12.6-12.6S28.6 9 28.6 16 23 28.8 16 28.8zm7.1-9.6c-.3-.2-1.7-.8-1.9-.9-.3-.1-.6-.2-.8.2s-1 1.1-1.2 1.3c-.2.2-.4.2-.7.1-1.9-.9-3.2-1.6-4.5-3.5-.3-.4 0-.6.2-.9.2-.2.3-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.8-1.9-1.1-2.6-.3-.7-.5-.6-.7-.6-.2 0-.4 0-.6 0s-.6.1-.9.4c-.3.3-1.2 1.1-1.2 2.6 0 1.5 1.2 2.9 1.3 3.1.2.2 2.4 3.7 5.8 5.2 2.2.9 3.1.9 4.2.8.6-.1 1.7-.7 1.9-1.3.3-.6.3-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/>
+    </svg>
+  </a>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
+  
+    // Acordeón
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggles = document.querySelectorAll('.accordion-toggle');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+      });
+    });
+  </script>
+  <script>
+    function toggleModal() {
+        const modal = document.getElementById('cart-modal');
+        modal.classList.toggle('show');
+    }
+</script>
+<script>
+  function toggleCart() {
+    const dropdown = document.getElementById('cart-dropdown');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+
+  window.addEventListener('click', function(e) {
+    const cart = document.querySelector('.cart-container');
+    if (!cart.contains(e.target)) {
+      document.getElementById('cart-dropdown').style.display = 'none';
+    }
+  });
+</script>
+
+
+</body>
+</html>
