@@ -72,29 +72,42 @@ a#logo-reload {
 
 /* Botones centrales */
 .nav-links {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  max-width: 400px;
+  padding: 10px 5px;
 }
 
 .nav-links a {
     text-decoration: none;
+    border:solid 1px #ff0044;
     color: #ffffff;
     font-weight: 500;
     position: relative;
-    transition: color 0.3s;
-}
+    margin-right: 20px;
+    border-radius: 999px;
+    padding: 15px 20px;
+  }
 
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: #ff0044;
+  content: '';
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #e60012;
+  transition: width 0.10s ease;
 }
 
 .nav-links a:hover {
-    color: #e63946;
+  color: #e60012; /* texto rojo al pasar el mouse */
+  text-decoration: underline;
+  text-decoration-color: #e60012;
+  transition: width 0.10s ease;
 }
+
 /* Barra de .busqueda */
 .nav-bar {
   display: flex;
@@ -104,13 +117,7 @@ a#logo-reload {
   background-color: #f0f0f0;
   gap: 20px;
 }
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  flex: 1;
-  max-width: 400px;
-}
+
 
 .search-bar {
   display: flex;
@@ -349,7 +356,31 @@ a#logo-reload {
 .categorias-header {
   position: relative;
   display: inline-block;
+  
 }
+
+.menu-categorias {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 500px;
+  background-color: rgba(13, 13, 13, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  flex-direction: column; /* Ahora es una columna con un título */
+}
+.categorias-header:hover .menu-categorias {
+  display: block;
+}
+.categorias-header:hover {
+  display: flex;
+  color: rgba(255, 80, 80, 0.9);
+}
+
 
 .btn-categorias {
   background-color: #1a1a1a;
@@ -368,52 +399,11 @@ a#logo-reload {
   color: #fff;
 }
 /* --- Contenedor de categorías desplegable --- */
-.menu-categorias {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: rgba(13, 13, 13, 0.5);  /* fondo más translúcido */
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  z-index: 999;
-  min-width: 220px;
-  padding: 10px 0;
-  animation: fadeIn 0.3s ease forwards;
-  backdrop-filter: blur(8px); /* efecto de vidrio opcional */
-}
+
 /* --- Animación de aparición --- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
-}
-/* --- Mostrar menú al hacer hover --- */
-.categorias-header:hover .menu-categorias {
-  display: block;
-}
-
-/* --- Lista de categorías --- */
-/* Contenedor del menú */
-.menu-categorias {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 500px;
-  background-color: rgba(13, 13, 13, 0.6);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  flex-direction: column; /* Ahora es una columna con un título */
-}
-
-
-/* Mostrar al pasar el mouse */
-.categorias-header:hover {
-  display: flex;
-  color: rgba(255, 80, 80, 0.9);
 }
 
 /* --- Título del menú --- */
