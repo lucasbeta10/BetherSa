@@ -13,15 +13,14 @@
 
     <!-- Encabezado -->
     <header>
-        <div class="logo-contenedor-horizontal">
-          <img src="Imagenes/Logos/Empresa/Bether.png" alt="logo">
-          <div class="logo-textos">
-            <span class="logo-nombre">Bether</span>
-                <span class="logo-slogan">Más Energía Positiva
-                </span>
-          </div>
+      <div id="recargar" class="logo-contenedor-horizontal" style="cursor: pointer;">
+        <img src="Imagenes/Logos/Empresa/Bether.png" alt="logo">
+        <div class="logo-textos">
+          <span class="logo-nombre">Bether</span>
+          <span class="logo-slogan">Más Energía Positiva</span>
         </div>
-      </a>
+      </div>
+      
 <!-- Botón hamburguesa -->
 
         <input type="checkbox" id="menu-toggle" />
@@ -201,8 +200,8 @@
             <form id="login-form" onsubmit="enviarLogin(event)">
               <input type="text" placeholder="Email" required>
               <input type="password" placeholder="Contraseña" required>
+             
               
-              <!-- Botón debajo del campo contraseña -->
               <button type="button" class="forgot-button" onclick="olvidoContrasena()">
                 ¿Olvidaste tu contraseña?
               </button>
@@ -298,11 +297,12 @@ window.addEventListener('click', function(e) {
 });
 </script>
 <script>
-  document.getElementById('logo-reload').addEventListener('click', function(e) {
-    e.preventDefault(); // Evita que solo salte al principio
-    location.reload();  // Recarga toda la página
+  document.getElementById('recargar').addEventListener('click', function () {
+    window.location.href = window.location.origin + window.location.pathname;
   });
 </script>
+
+
 <script>
   function iniciarSesion() {
     document.getElementById('login-modal').style.display = 'block';
