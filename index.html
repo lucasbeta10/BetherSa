@@ -14,13 +14,14 @@
     <!-- Encabezado -->
     <header>
         <div class="logo-contenedor-horizontal">
-            <img src="Imagenes/Logos/Empresa/Bether.png" alt="logo">
-            <div class="logo-textos">
-                <span class="logo-nombre">Bether</span>
+          <img src="Imagenes/Logos/Empresa/Bether.png" alt="logo">
+          <div class="logo-textos">
+            <span class="logo-nombre">Bether</span>
                 <span class="logo-slogan">Más Energía Positiva
                 </span>
-            </div>
+          </div>
         </div>
+      </a>
 <!-- Botón hamburguesa -->
 
         <input type="checkbox" id="menu-toggle" />
@@ -76,14 +77,21 @@
     
   </div>
 <!-- Carrito -->
-    <div class="cart-container">
-      <div class="cart-button" onclick="toggleCart()">
+<div class="header-derecha">
+  <div class="login-button" onclick="iniciarSesion()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+      <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+    </svg>
+  </div>
+  
+  <div class="cart-container">
+    <div class="cart-button" onclick="toggleCart()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
           <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm0 2zm10-2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 2zm-9.83-4h11.59c.82 0 1.54-.5 1.84-1.26l3.58-8.59a1.003 1.003 0 0 0-.94-1.41H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 17.37 5.48 18 6.41 18z"/>
         </svg>
         <span id="cart-count">0</span>
       </div>
-      <div class="cart-dropdown" id="cart-dropdown">
+      <div id="cart-dropdown" class="cart-dropdown">
         <h3>Carrito de compras</h3>
         <ul id="cart-items">
           <li>No hay productos aún.</li>
@@ -91,6 +99,7 @@
         <button class="checkout-btn">Finalizar compra</button>
       </div>
     </div>
+  </div>
   
     </header>
   
@@ -114,10 +123,10 @@
             <img src="Imagenes/Logos/JEEP.png" alt="Jeep">
             <img src="Imagenes/Logos/Mercedes.png" alt="Mercedes">
             <img src="Imagenes/Logos/Nissan.svg" alt="Nissan">
-            <img src="Imagenes/Logos/Peugeot.png" alt="Peugeot">
+            <img src="Imagenes/Logos/PEUGEOT.png" alt="Peugeot">
             <img src="Imagenes/Logos/Toyota.png" alt="Toyota">
-            <img src="Imagenes/Logos/VW.png" alt="Volkswagen">
-            <img src="Imagenes/Logos/mazda.png" alt="Mazda">
+            <img src="Imagenes/Logos/vw.png" alt="Volkswagen">
+            <img src="Imagenes/Logos/Mazda.png" alt="Mazda">
             <img src="Imagenes/Logos/Mitsubishi.svg" alt="Mitsubishi">
 
             <!-- Tanda duplicada -->
@@ -183,6 +192,26 @@
           <textarea name="mensaje" rows="4" placeholder="Escribí tu consulta..." required></textarea>
           <button type="submit">Enviar mensaje</button>
         </form>
+      </section>
+      <section>
+        <div id="login-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form" onsubmit="enviarLogin(event)">
+              <input type="text" placeholder="Email" required>
+              <input type="password" placeholder="Contraseña" required>
+              
+              <!-- Botón debajo del campo contraseña -->
+              <button type="button" class="forgot-button" onclick="olvidoContrasena()">
+                ¿Olvidaste tu contraseña?
+              </button>
+            
+              <button type="submit">Iniciar sesión</button>
+            </form>
+          </div>
+        </div>
+
       </section>
       
 
@@ -268,6 +297,39 @@ window.addEventListener('click', function(e) {
   }
 });
 </script>
+<script>
+  document.getElementById('logo-reload').addEventListener('click', function(e) {
+    e.preventDefault(); // Evita que solo salte al principio
+    location.reload();  // Recarga toda la página
+  });
+</script>
+<script>
+  function iniciarSesion() {
+    document.getElementById('login-modal').style.display = 'block';
+  }
+  
+  function cerrarModal() {
+    document.getElementById('login-modal').style.display = 'none';
+  }
+  
+  window.onclick = function(event) {
+    const modal = document.getElementById('login-modal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  }
+  
+  function enviarLogin(e) {
+    e.preventDefault();
+    const usuario = e.target[0].value;
+    const clave = e.target[1].value;
+    alert(`Usuario: ${usuario}\nContraseña: ${clave}`);
+    cerrarModal();
+  }
+    function olvidoContrasena() {
+      alert("Te enviaremos instrucciones para recuperar tu contraseña.");
+    }
+  </script>
 
 
 </body>

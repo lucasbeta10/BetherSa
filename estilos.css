@@ -63,6 +63,12 @@ header {
   font-style: italic;
   margin-top: 2px;
 }
+a#logo-reload {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
 
 /* Botones centrales */
 .nav-links {
@@ -158,6 +164,128 @@ header {
 /* ------------------------ */
 /* Carrito de Compras */
 /* --------------------------- */
+.header-derecha {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+/* Botón de inicio de sesión */
+.login-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.login-button svg {
+  width: 24px;
+  height: 24px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background-color: rgb(0, 0, 0, 0.8);
+  color: white;
+  margin: 8% auto;
+  padding: 40px 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
+  text-align: center;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-align: left;
+  text-align: center;
+}
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* centrar inputs y botón */
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 14px;
+  max-width: 100%;
+}
+
+.modal-content input::placeholder {
+  color: #aaa;
+}
+
+.modal-content button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: #f6121d;
+}
+.forgot-button {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 12px;
+  margin: 0 0 12px 0;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  align-self: flex-start;
+  width: auto;
+}
+
+.forgot-button:hover {
+  color: white;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: white;
+}
+
+/* Carrito compras */
 .cart-container {
   position: relative;
 }
